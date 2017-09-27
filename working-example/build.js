@@ -327,7 +327,7 @@ var Component = __webpack_require__(12)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\data\\iis\\SimpleTable\\src\\app.vue"
+Component.options.__file = "D:\\data\\iis\\simple-table\\src\\app.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] app.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -338,9 +338,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-58980436", Component.options)
+    hotAPI.createRecord("data-v-443cde30", Component.options)
   } else {
-    hotAPI.reload("data-v-58980436", Component.options)
+    hotAPI.reload("data-v-443cde30", Component.options)
   }
 })()}
 
@@ -8577,7 +8577,7 @@ exports = module.exports = __webpack_require__(50)(undefined);
 
 
 // module
-exports.push([module.i, "\n.table[data-v-d70482e0] {\n    margin: 0;\n}\ntfoot[data-v-d70482e0], tfoot *[data-v-d70482e0] {\n    max-height: 0;\n    height: 0;\n}\n.header[data-v-d70482e0] {\n    border:0px solid gray;\n    //margin-top:-1px;\n}\n.header tr[data-v-d70482e0] {\n    background:#f4f4f4;\n    //color: white;\n}\n[data-component=\"Tabla\"] tr[data-v-d70482e0]:hover {\n    background: #eee;\n}\ntr.rowSelected[data-v-d70482e0] {\n    background: #ddd;\n}\ntd[data-v-d70482e0] {\n    border:1px solid #ddd;\n    box-sizing:border-box;\n    font-size:11px;\n}\n.header td[data-v-d70482e0] {\n    //border:0;\n}\n.header td div[data-v-d70482e0] {\n    background: white;\n    border:1px solid lightgray;\n    padding: 2px;\n    box-sizing: border-box;\n}\ntd.nowrap[data-v-d70482e0] {\n    white-space: nowrap;\n}\n[data-order=\"asc\"][data-v-d70482e0] {\n    background: blue\n}\n[data-order=\"desc\"][data-v-d70482e0] {\n    background: green\n}\ntable[data-v-d70482e0] {\n    border-collapse: collapse;\n    //cursor: default;\n}\ntd[contenteditable=\"true\"][data-v-d70482e0] {\n    cursor: text;\n}\ntd[contenteditable=\"true\"][data-v-d70482e0]:hover {\n    border-color: gray;\n}\ntd[contenteditable=\"true\"][data-v-d70482e0]:focus {\n    background:white;\n    color: #444;\n}\nbutton[data-v-d70482e0] {\n    padding:0;\n    margin:2px;\n    height:20px;\n    float: left;\n    background:transparent;border:0;cursor:default;\n    opacity: 0.7;\n}\nbutton svg[data-v-d70482e0] {\n    opacity: inherit;\n}\nbutton[data-v-d70482e0]:hover{\n    opacity: 0.9;\n}\ninput[type=\"checkbox\"][data-v-d70482e0] {\n    margin:0;\n    padding: 0;\n}\n", ""]);
+exports.push([module.i, "\n.table[data-v-7e229bda] {\n    margin: 0;\n}\ntfoot[data-v-7e229bda], tfoot *[data-v-7e229bda] {\n    max-height: 0;\n    height: 0;\n}\n.header[data-v-7e229bda] {\n    border:0px solid gray;\n    //margin-top:-1px;\n}\n.header tr[data-v-7e229bda] {\n    background:#f4f4f4;\n    //color: white;\n}\n[data-component=\"Tabla\"] tr[data-v-7e229bda]:hover {\n    background: #eee;\n}\ntr.rowSelected[data-v-7e229bda] {\n    background: #ddd;\n}\ntd[data-v-7e229bda] {\n    border:1px solid #ddd;\n    box-sizing:border-box;\n    font-size:11px;\n}\n.header td[data-v-7e229bda] {\n    //border:0;\n}\n.header td div[data-v-7e229bda] {\n    background: white;\n    border:1px solid lightgray;\n    padding: 2px;\n    box-sizing: border-box;\n}\ntd.nowrap[data-v-7e229bda] {\n    white-space: nowrap;\n}\n[data-order=\"asc\"][data-v-7e229bda] {\n    background: blue\n}\n[data-order=\"desc\"][data-v-7e229bda] {\n    background: green\n}\ntable[data-v-7e229bda] {\n    border-collapse: collapse;\n    //cursor: default;\n}\ntd[contenteditable=\"true\"][data-v-7e229bda] {\n    cursor: text;\n}\ntd[contenteditable=\"true\"][data-v-7e229bda]:hover {\n    border-color: gray;\n}\ntd[contenteditable=\"true\"][data-v-7e229bda]:focus {\n    background:white;\n    color: #444;\n}\nbutton[data-v-7e229bda] {\n    padding:0;\n    margin:2px;\n    height:20px;\n    float: left;\n    background:transparent;border:0;cursor:default;\n    opacity: 0.7;\n}\nbutton svg[data-v-7e229bda] {\n    opacity: inherit;\n}\nbutton[data-v-7e229bda]:hover{\n    opacity: 0.9;\n}\ninput[type=\"checkbox\"][data-v-7e229bda] {\n    margin:0;\n    padding: 0;\n}\n", ""]);
 
 // exports
 
@@ -18938,11 +18938,11 @@ var Component = __webpack_require__(12)(
   /* template */
   __webpack_require__(54),
   /* scopeId */
-  "data-v-d70482e0",
+  "data-v-7e229bda",
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\data\\iis\\SimpleTable\\src\\components\\simple-table.vue"
+Component.options.__file = "D:\\data\\iis\\simple-table\\src\\components\\simple-table.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] simple-table.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -18953,9 +18953,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d70482e0", Component.options)
+    hotAPI.createRecord("data-v-7e229bda", Component.options)
   } else {
-    hotAPI.reload("data-v-d70482e0", Component.options)
+    hotAPI.reload("data-v-7e229bda", Component.options)
   }
 })()}
 
@@ -18997,7 +18997,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-58980436", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-443cde30", module.exports)
   }
 }
 
@@ -19218,7 +19218,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-d70482e0", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7e229bda", module.exports)
   }
 }
 
@@ -19233,13 +19233,13 @@ var content = __webpack_require__(49);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(56)("40cbb0c7", content, false);
+var update = __webpack_require__(56)("5485a46f", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-d70482e0\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./simple-table.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-d70482e0\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./simple-table.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-7e229bda\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./simple-table.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-7e229bda\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./simple-table.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

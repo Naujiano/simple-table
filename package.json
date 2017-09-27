@@ -1,7 +1,27 @@
 {
-  "name": "myapp",
+  "name": "simple-table",
   "version": "0.0.1",
-  "description": "My app",
+  "description": "Simple table component with sticky headers for Vue.js",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Naujiano/simple-table.git"
+  },
+  "keywords": [
+    "table",
+    "vue",
+    "sticky",
+    "headers"
+  ],
+  "author": "Juan Martín Migliorini <juan.martin.m@gmailcom>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Naujiano/simple-table/issues"
+  },
+  "homepage": "https://github.com/Naujiano/simple-table",
   "dependencies": {
     "jquery": "^3.2.1",
     "vue": "^2.1.10"
@@ -22,6 +42,5 @@
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
     "webpack-merge": "^2.6.1"
-  },
-  "author": "You"
+  }
 }
