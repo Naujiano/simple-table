@@ -13,7 +13,14 @@ npm install simple-table-vue
 ```
 import {SimpleTable} from 'simple-table-vue'
 
-<SimpleTable :rows="rows" overflow="scroll" :multiline="multiline" v-on:rowClick="rowClick" v-on:checkClick="checkClick" :checkable="true"/>
+<SimpleTable
+    :rows="rows"
+    overflow="scroll"
+    :multiline="multiline"
+    v-on:rowClick="rowClick"
+    v-on:checkClick="checkClick"
+    :checkable="true"
+/>
 ```
 
 # Props
