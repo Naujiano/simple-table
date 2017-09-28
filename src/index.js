@@ -1,9 +1,2 @@
-import SimpleTable from './components/simple-table';
-
-export default {
-    install(Vue) {
-        Vue.component('simple-table', SimpleTable);
-    }
-};
-
+import SimpleTable from './components/simple-table.vue';
 export { SimpleTable };
