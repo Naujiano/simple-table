@@ -18956,6 +18956,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             deleteable: false,
             nowrap: false,
             searchable: false,
+            overflow: "auto",
             hiddenKeys: [],
             editablekeys: ["nombre"]
         };
@@ -18968,7 +18969,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var val = event.target.value;
             if (param == "hiddenKeys" || param == "rows") {
                 val = JSON.parse(val);
-            } else {
+            } else if (param != "overflow") {
                 val = val * 1;
             }
             this[param] = val;
@@ -21422,6 +21423,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("True")])])]), _vm._v(" "), _c('div', {
     staticClass: "divParam"
+  }, [_c('label', [_vm._v("overflow")]), _vm._v(" "), _c('select', {
+    on: {
+      "change": function($event) {
+        _vm.changeParameter('overflow', $event)
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "auto"
+    }
+  }, [_vm._v("auto")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "scroll"
+    }
+  }, [_vm._v("scroll")])])]), _vm._v(" "), _c('div', {
+    staticClass: "divParam"
   }, [_c('label', [_vm._v("hiddenKeys (Array of strings)")]), _vm._v(" "), _c('input', {
     staticStyle: {
       "height": "15px"
@@ -21487,7 +21504,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "height": "100%",
       "hiddenKeys": _vm.hiddenKeys,
       "rows": _vm.rows,
-      "overflow": "scroll",
+      "overflow": _vm.overflow,
       "checkable": _vm.checkable,
       "deleteable": _vm.deleteable,
       "nowrap": _vm.nowrap,

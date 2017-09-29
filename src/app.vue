@@ -31,6 +31,13 @@
         </select>
     </div>
     <div class="divParam">
+        <label>overflow</label>
+        <select @change="changeParameter('overflow',$event)">
+            <option value="auto">auto</option>
+            <option value="scroll">scroll</option>
+        </select>
+    </div>
+    <div class="divParam">
         <label>hiddenKeys (Array of strings)</label>
         <input style="height:15px" @blur="changeParameter('hiddenKeys',$event)" :value="JSON.stringify(hiddenKeys)"/>
     </div>
@@ -56,7 +63,7 @@
             height="100%" 
             :hiddenKeys="hiddenKeys" 
             :rows="rows"
-            overflow="scroll" 
+            :overflow="overflow" 
             v-on:orderBy="orderBy" 
             v-on:rowClick="rowClick" 
             v-on:checkClick="checkClick" 
@@ -102,6 +109,7 @@ export default {
             , deleteable: false
             , nowrap: false
             , searchable: false
+            , overflow: "auto"
             , hiddenKeys: []
             , editablekeys: ["nombre"]
         }
@@ -120,7 +128,7 @@ export default {
         var val = event.target.value
         if ( param == "hiddenKeys" || param == "rows" ) {
             val = JSON.parse ( val )
-        } else {
+        } else if ( param != "overflow" ) {
             val = val * 1
         }
         this[param] = val
