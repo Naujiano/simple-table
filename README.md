@@ -2,6 +2,12 @@
 
 This repo contains a Vue component that can render a filterable table with sticky headers.
 
+This component aims to be efficient at handling big tables with loads of rows.
+
+For the moment it is dependent on jQuery.
+
+jQuery UI is not used buy the component, only by the [working example](https://cdn.rawgit.com/Naujiano/simple-table/8f3912a7/working-example/index.html) to make the component container resizable.
+
 # Installation
 
 ```
