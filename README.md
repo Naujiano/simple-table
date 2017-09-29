@@ -6,7 +6,7 @@ This component aims to be efficient at handling big tables with loads of rows.
 
 For the moment it is dependent on jQuery.
 
-jQuery UI is not used by the component itself, only by the [working example](https://rawgit.com/Naujiano/simple-table/master/working-example/index.html) to make the component container resizable.
+jQuery UI is not used by the component itself, only by the [working example](http://rawgit.com/Naujiano/simple-table/master/working-example/index.html) to make the component container resizable.
 
 # Installation
 
@@ -74,5 +74,5 @@ The component listen to the following events:
 
 # Interactive working example
 
-You can see the component in action and test its properties in the following [working example](https://rawgit.com/Naujiano/simple-table/master/working-example/index.html).
+You can see the component in action and test its properties in the following [working example](http://rawgit.com/Naujiano/simple-table/master/working-example/index.html).
 
