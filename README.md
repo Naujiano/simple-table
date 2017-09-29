@@ -33,10 +33,12 @@ You can pass these props  to the component:
 # Events
 
 The component emits the following events:
-- `rowClick`: Fired when a row is selected. Returns an Object with the entire row.
 - `checkClick`: Fired when the checkbox of a row is clicked. Returns an Array with the indexes of the rows checked.
+- `rowClick`: Fired when a row is selected. Returns an Object with the entire row.
 - `rowEdit`: Fired when a row is edited. Returns an Object with the following keys: `rowIndex`, `key`, `value`, with the index of the edited row, they edited keyname and the value after the edition is done.
-- `rowDelete`: Fired when a row is deleted. Returns the deleted row index.
+
+The component listen to the following events:
+- `resize`: Fired when the browser window is resized. The component recalculates the headers size and position each time this event is fired. You can fire this event from Javascript if you need to make the component react to a container resize event on your code.
 
 # Interactive working example
 

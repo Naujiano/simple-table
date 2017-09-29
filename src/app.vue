@@ -34,6 +34,10 @@
         <label>hiddenKeys (Array of strings)</label>
         <input style="height:15px" @blur="changeParameter('hiddenKeys',$event)" :value="JSON.stringify(hiddenKeys)"/>
     </div>
+    <div class="divParam">
+        <label>editablekeys (Array of strings)</label>
+        <input style="height:15px" @blur="changeParameter('editablekeys',$event)" :value="JSON.stringify(editablekeys)"/>
+    </div>
     <div class="divParam" style="clear:left;padding-top:10px;width:40vw">
         <label>rows (Array of objects)</label>
         <textarea style="width:100%;height:200px" @blur="changeParameter('rows',$event)">{{rows}}</textarea>
@@ -61,6 +65,7 @@
             :nowrap="nowrap"
             :searchable="searchable"
             :actions="[]"
+            :editablekeys = "editablekeys"
         />
     </div>
 </div>
@@ -98,6 +103,7 @@ export default {
             , nowrap: false
             , searchable: false
             , hiddenKeys: []
+            , editablekeys: ["nombre"]
         }
 	}
   , methods: {
