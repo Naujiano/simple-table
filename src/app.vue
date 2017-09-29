@@ -1,53 +1,55 @@
 <template>
 <div style="width:100vw;height:100vh;box-sizing:border-box;border:0px solid red">
-    <h1 style="margin:auto;width:300px">Simple Table Vue</h1>
+    <h1 style="margin:auto;width:600px">Simple Table Vue Working Example</h1>
     <h3>Component Props</h3>
-    <div class="divParam">
-        <label>checkable</label>
-        <select @change="changeParameter('checkable',$event)">
-            <option value="0">False</option>
-            <option value="1">True</option>
-        </select>
-    </div>
-    <div class="divParam">
-        <label>searchable</label>
-        <select @change="changeParameter('searchable',$event)">
-            <option value="0">False</option>
-            <option value="1">True</option>
-        </select>
-    </div>
-    <div class="divParam">
-        <label>deleteable</label>
-        <select @change="changeParameter('deleteable',$event)">
-            <option value="0">False</option>
-            <option value="1">True</option>
-        </select>
-    </div>
-    <div class="divParam">
-        <label>nowrap</label>
-        <select @change="changeParameter('nowrap',$event)">
-            <option value="0">False</option>
-            <option value="1">True</option>
-        </select>
-    </div>
-    <div class="divParam">
-        <label>overflow</label>
-        <select @change="changeParameter('overflow',$event)">
-            <option value="auto">auto</option>
-            <option value="scroll">scroll</option>
-        </select>
-    </div>
-    <div class="divParam">
-        <label>hiddenKeys (Array of strings)</label>
-        <input style="height:15px" @blur="changeParameter('hiddenKeys',$event)" :value="JSON.stringify(hiddenKeys)"/>
-    </div>
-    <div class="divParam">
-        <label>editablekeys (Array of strings)</label>
-        <input style="height:15px" @blur="changeParameter('editablekeys',$event)" :value="JSON.stringify(editablekeys)"/>
-    </div>
-    <div class="divParam" style="clear:left;padding-top:10px;width:40vw">
-        <label>rows (Array of objects)</label>
-        <textarea style="width:100%;height:200px" @blur="changeParameter('rows',$event)">{{rows}}</textarea>
+    <div style="width: 80vw;">
+        <div class="divParam form-group" style="float:left;padding-top:0px;width:40vw">
+            <label>rows (Array of objects)</label>
+            <textarea class="form-control" style="width:100%;height:255px" @blur="changeParameter('rows',$event)">{{rows}}</textarea>
+        </div>
+        <div class="divParam">
+            <label>checkable</label>
+            <select class="form-control" @change="changeParameter('checkable',$event)">
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+        </div>
+        <div class="divParam">
+            <label>searchable</label>
+            <select class="form-control" @change="changeParameter('searchable',$event)">
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+        </div>
+        <div class="divParam">
+            <label>deleteable</label>
+            <select class="form-control" @change="changeParameter('deleteable',$event)">
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+        </div>
+        <div class="divParam">
+            <label>nowrap</label>
+            <select class="form-control" @change="changeParameter('nowrap',$event)">
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+        </div>
+        <div class="divParam">
+            <label>overflow</label>
+            <select class="form-control" @change="changeParameter('overflow',$event)">
+                <option value="auto">auto</option>
+                <option value="scroll">scroll</option>
+            </select>
+        </div>
+        <div class="divParam">
+            <label>hiddenKeys (Array of strings)</label>
+            <input class="form-control" @blur="changeParameter('hiddenKeys',$event)" :value="JSON.stringify(hiddenKeys)"/>
+        </div>
+        <div class="divParam">
+            <label>editablekeys (Array of strings)</label>
+            <input class="form-control" @blur="changeParameter('editablekeys',$event)" :value="JSON.stringify(editablekeys)"/>
+        </div>
     </div>
     <!--
     <div class="divParam" style="padding-top:10px;width:40vw">
@@ -57,7 +59,7 @@
     -->
     <h3 style="display:block;clear:both;padding-top:20px">Component Render</h3>
     <p>Resize the table to check the behavior.</p>
-    <div style="width:80vw;height:400px;border:5px solid gray;clear:both" ref="simpleTable">
+    <div style="width:80vw;height:200px;border:5px solid gray;clear:both" ref="simpleTable">
         <Tabla 
             style="background:white" 
             height="100%" 
@@ -87,14 +89,17 @@ export default {
     , data () {
         return {
           rows: [
-                {nombre:"javier",apellido:"",dni:""}
-                ,{nombre:"juan",apellido:"migliorini",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"},
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"},
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"},
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"},
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"},
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"},
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"},
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj añlsdkfjañlsdjfñadfjñadkfjwñefklsdanfkahfaldkflñadksfnwlfnwelfnwlfkadf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"},
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"},
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"},
+                {name:"juan","Last Name":"migliorini",dni:"12345678z",Address:"Calle pescador del romero, 13. San Jacinto del monte.",email:"midirecciondeemail@midominion.com","C.V.":"asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h"}
             ]
             , gridActions: [
                 {
@@ -149,13 +154,29 @@ export default {
 <style scoped>
 p {
     font-family: arial;
-    font-size: 11px;
+    font-size: 12px;
 }
 .divParam {
-    float: left;
-    width: 150px;
+    float: right;
+    clear: right;
+    width: 38vw;
+    padding-top: 5px;
+    font-family: arial;
+    font-size: 12px;
 }
 select {
     display:block;
+    font-family: arial;
+    font-size: 12px;
+}
+label {
+    font-weight: normal;
+    padding: 0 0 5px 0;
+    margin: 0;
+}
+input {
+    display:block;
+    font-family: arial;
+    font-size: 12px;
 }
 </style>

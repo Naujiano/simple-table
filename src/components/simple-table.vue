@@ -202,7 +202,6 @@ export default {
         , $tbody = $(this.$refs.tbody)
         , $columns = $tbody.find('tr:visible').eq(0).find('td')
         , $headerColumns = $header.find('tr').eq(0).find('td')
-        , headerHeight = $header.height()
         $header.width($tbody.width())
         $columns.each ( function (i) {
             const $col = $(this)
@@ -211,6 +210,7 @@ export default {
             //console.log(i+'*'+width)
             $headerCol.width ( width )
         })
+        const headerHeight = $header.height()
         $header.css({"margin-top":"-"+headerHeight+"px"})
         $(this.$refs.simple_table_vue).css({"padding-top":headerHeight+"px"})
         this.scrollHeaders()

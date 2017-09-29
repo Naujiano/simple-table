@@ -18944,7 +18944,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: { Tabla: __WEBPACK_IMPORTED_MODULE_0__components_simple_table_vue___default.a },
     data: function data() {
         return {
-            rows: [{ nombre: "javier", apellido: "", dni: "" }, { nombre: "juan", apellido: "migliorini", dni: "12345678z" }, { nombre: "javier", apellido: "de la quintana", dni: "12345678z" }, { nombre: "javier", apellido: "de la quintana", dni: "12345678z" }, { nombre: "javier", apellido: "de la quintana", dni: "12345678z" }, { nombre: "javier", apellido: "de la quintana", dni: "12345678z" }, { nombre: "javier", apellido: "de la quintana", dni: "12345678z" }, { nombre: "javier", apellido: "de la quintana", dni: "12345678z" }],
+            rows: [{ name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }, { name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }, { name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }, { name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }, { name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }, { name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }, { name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }, { name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj añlsdkfjañlsdjfñadfjñadkfjwñefklsdanfkahfaldkflñadksfnwlfnwelfnwlfkadf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }, { name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }, { name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }, { name: "juan", "Last Name": "migliorini", dni: "12345678z", Address: "Calle pescador del romero, 13. San Jacinto del monte.", email: "midirecciondeemail@midominion.com", "C.V.": "asldj ñaskd ñq je ñasdklf ahdfqw fkajdhf asgjkha dlkjashqkw l dlsfkjh qlehj lqewkh fljewh lqwhje qlehf lajdhsf aldkfmfq mefnjvbavjba lkjhfq lkjher qlwjeh lkbdlkjsdhf lkjhq erlw h" }],
             gridActions: [{
                 button: '<svg style="width:20px;opacity:inherit" data-help-code="general-sql-get" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"><path d="M28 0C12.6 0 0 12.6 0 28s12.6 28 28 28 28-12.6 28-28S43.4 0 28 0zM40 41H16c-1.1 0-2-0.9-2-2s0.9-2 2-2h24c1.1 0 2 0.9 2 2S41.1 41 40 41zM40 30H16c-1.1 0-2-0.9-2-2s0.9-2 2-2h24c1.1 0 2 0.9 2 2S41.1 30 40 30zM40 19H16c-1.1 0-2-0.9-2-2s0.9-2 2-2h24c1.1 0 2 0.9 2 2S41.1 19 40 19z"/></svg>',
                 func: function (event, _rowIndex) {
@@ -19166,8 +19166,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var $header = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.header),
                 $tbody = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.tbody),
                 $columns = $tbody.find('tr:visible').eq(0).find('td'),
-                $headerColumns = $header.find('tr').eq(0).find('td'),
-                headerHeight = $header.height();
+                $headerColumns = $header.find('tr').eq(0).find('td');
             $header.width($tbody.width());
             $columns.each(function (i) {
                 var $col = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this),
@@ -19176,6 +19175,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                 $headerCol.width(width);
             });
+            var headerHeight = $header.height();
             $header.css({ "margin-top": "-" + headerHeight + "px" });
             __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.simple_table_vue).css({ "padding-top": headerHeight + "px" });
             this.scrollHeaders();
@@ -19642,7 +19642,7 @@ exports = module.exports = __webpack_require__(53)(undefined);
 
 
 // module
-exports.push([module.i, "\np[data-v-443cde30] {\r\n    font-family: arial;\r\n    font-size: 11px;\n}\n.divParam[data-v-443cde30] {\r\n    float: left;\r\n    width: 150px;\n}\nselect[data-v-443cde30] {\r\n    display:block;\n}\r\n", ""]);
+exports.push([module.i, "\np[data-v-443cde30] {\r\n    font-family: arial;\r\n    font-size: 12px;\n}\n.divParam[data-v-443cde30] {\r\n    float: right;\r\n    clear: right;\r\n    width: 38vw;\r\n    padding-top: 5px;\r\n    font-family: arial;\r\n    font-size: 12px;\n}\nselect[data-v-443cde30] {\r\n    display:block;\r\n    font-family: arial;\r\n    font-size: 12px;\n}\nlabel[data-v-443cde30] {\r\n    font-weight: normal;\r\n    padding: 0 0 5px 0;\r\n    margin: 0;\n}\ninput[data-v-443cde30] {\r\n    display:block;\r\n    font-family: arial;\r\n    font-size: 12px;\n}\r\n", ""]);
 
 // exports
 
@@ -21355,11 +21355,34 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('h1', {
     staticStyle: {
       "margin": "auto",
-      "width": "300px"
+      "width": "600px"
     }
-  }, [_vm._v("Simple Table Vue")]), _vm._v(" "), _c('h3', [_vm._v("Component Props")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Simple Table Vue Working Example")]), _vm._v(" "), _c('h3', [_vm._v("Component Props")]), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "width": "80vw"
+    }
+  }, [_c('div', {
+    staticClass: "divParam form-group",
+    staticStyle: {
+      "float": "left",
+      "padding-top": "0px",
+      "width": "40vw"
+    }
+  }, [_c('label', [_vm._v("rows (Array of objects)")]), _vm._v(" "), _c('textarea', {
+    staticClass: "form-control",
+    staticStyle: {
+      "width": "100%",
+      "height": "255px"
+    },
+    on: {
+      "blur": function($event) {
+        _vm.changeParameter('rows', $event)
+      }
+    }
+  }, [_vm._v(_vm._s(_vm.rows))])]), _vm._v(" "), _c('div', {
     staticClass: "divParam"
   }, [_c('label', [_vm._v("checkable")]), _vm._v(" "), _c('select', {
+    staticClass: "form-control",
     on: {
       "change": function($event) {
         _vm.changeParameter('checkable', $event)
@@ -21376,6 +21399,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("True")])])]), _vm._v(" "), _c('div', {
     staticClass: "divParam"
   }, [_c('label', [_vm._v("searchable")]), _vm._v(" "), _c('select', {
+    staticClass: "form-control",
     on: {
       "change": function($event) {
         _vm.changeParameter('searchable', $event)
@@ -21392,6 +21416,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("True")])])]), _vm._v(" "), _c('div', {
     staticClass: "divParam"
   }, [_c('label', [_vm._v("deleteable")]), _vm._v(" "), _c('select', {
+    staticClass: "form-control",
     on: {
       "change": function($event) {
         _vm.changeParameter('deleteable', $event)
@@ -21408,6 +21433,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("True")])])]), _vm._v(" "), _c('div', {
     staticClass: "divParam"
   }, [_c('label', [_vm._v("nowrap")]), _vm._v(" "), _c('select', {
+    staticClass: "form-control",
     on: {
       "change": function($event) {
         _vm.changeParameter('nowrap', $event)
@@ -21424,6 +21450,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("True")])])]), _vm._v(" "), _c('div', {
     staticClass: "divParam"
   }, [_c('label', [_vm._v("overflow")]), _vm._v(" "), _c('select', {
+    staticClass: "form-control",
     on: {
       "change": function($event) {
         _vm.changeParameter('overflow', $event)
@@ -21440,9 +21467,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("scroll")])])]), _vm._v(" "), _c('div', {
     staticClass: "divParam"
   }, [_c('label', [_vm._v("hiddenKeys (Array of strings)")]), _vm._v(" "), _c('input', {
-    staticStyle: {
-      "height": "15px"
-    },
+    staticClass: "form-control",
     domProps: {
       "value": JSON.stringify(_vm.hiddenKeys)
     },
@@ -21454,9 +21479,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('div', {
     staticClass: "divParam"
   }, [_c('label', [_vm._v("editablekeys (Array of strings)")]), _vm._v(" "), _c('input', {
-    staticStyle: {
-      "height": "15px"
-    },
+    staticClass: "form-control",
     domProps: {
       "value": JSON.stringify(_vm.editablekeys)
     },
@@ -21465,24 +21488,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.changeParameter('editablekeys', $event)
       }
     }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "divParam",
-    staticStyle: {
-      "clear": "left",
-      "padding-top": "10px",
-      "width": "40vw"
-    }
-  }, [_c('label', [_vm._v("rows (Array of objects)")]), _vm._v(" "), _c('textarea', {
-    staticStyle: {
-      "width": "100%",
-      "height": "200px"
-    },
-    on: {
-      "blur": function($event) {
-        _vm.changeParameter('rows', $event)
-      }
-    }
-  }, [_vm._v(_vm._s(_vm.rows))])]), _vm._v(" "), _c('h3', {
+  })])]), _vm._v(" "), _c('h3', {
     staticStyle: {
       "display": "block",
       "clear": "both",
@@ -21492,7 +21498,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "simpleTable",
     staticStyle: {
       "width": "80vw",
-      "height": "400px",
+      "height": "200px",
       "border": "5px solid gray",
       "clear": "both"
     }
