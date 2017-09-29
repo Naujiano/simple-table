@@ -15,11 +15,6 @@ import {SimpleTable} from 'simple-table-vue'
 
 <SimpleTable
     :rows="rows"
-    overflow="scroll"
-    :multiline="multiline"
-    v-on:rowClick="rowClick"
-    v-on:checkClick="checkClick"
-    :checkable="true"
 />
 ```
 
@@ -30,7 +25,6 @@ You can pass these props  to the component:
 - `nowrap`: `False` by deafult. If set to `True` each `<td>` of the table will have `white-space: nowrap` in its style.
 - `searchable`: `False` by deafult. If set to `True` a searchable field will appear below each header. The searched value will be treated as a regular expression.
 - `checkable`: `False` by deafult. If set to `True` a checkbox field will appear to the left of each record.
-- `deleteable`: `False` by deafult. If set to `True` a delete button will appear to the right of each record.
 - `cellMaxHeight`: Set the table `<td>` maximum height. Use a number followed by a unit indentifier, for example `12px`.
 - `hiddenKeys`: An Array of Strings. Use this if you want to not render some keys from the `rows` property. You will usually want to hide an ID field that you pass for editing purposes.
 - `editablekeys`: An Array of Strings. Use this if you want to allow the edition of some keys from the `rows` property.
@@ -43,4 +37,8 @@ The component emits the following events:
 - `checkClick`: Fired when the checkbox of a row is clicked. Returns an Array with the indexes of the rows checked.
 - `rowEdit`: Fired when a row is edited. Returns an Object with the following keys: `rowIndex`, `key`, `value`, with the index of the edited row, they edited keyname and the value after the edition is done.
 - `rowDelete`: Fired when a row is deleted. Returns the deleted row index.
+
+# Interactive working example
+
+You can see the component in action and test its properties in the following [working example](https://cdn.rawgit.com/Naujiano/simple-table/8f3912a7/working-example/index.html)
 
