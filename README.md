@@ -13,28 +13,34 @@ npm install simple-table-vue
 Vue.js code:
 
 ```
-import {SimpleTable} from 'simple-table-vue'
+<template>
 
-<SimpleTable
-    :rows="rows"
-/>
+    <SimpleTable :rows="rows"/>
 
-export default {
-    data () {
-        return {
-          rows: [
-                {nombre:"javier",apellido:"",dni:""}
-                ,{nombre:"juan",apellido:"migliorini",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-            ]
+</template>
+
+<script>
+
+    import {SimpleTable} from 'simple-table-vue'
+
+    export default {
+        data () {
+            return {
+              rows: [
+                    {nombre:"javier",apellido:"",dni:""}
+                    ,{nombre:"juan",apellido:"migliorini",dni:"12345678z"}
+                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                ]
+            }
         }
     }
-}
+
+</script>
 ```
 
 # Props
