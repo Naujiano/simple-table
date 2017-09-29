@@ -60,7 +60,7 @@ You can pass these props  to the component:
 - `cellMaxHeight`: Set the table `<td>` maximum height. Use a number followed by a unit indentifier, for example `12px`.
 - `hiddenKeys`: An Array of Strings. Use this if you want to not render some keys from the `rows` property. You will usually want to hide an ID field that you pass for editing purposes.
 - `editablekeys`: An Array of Strings. Use this if you want to allow the edition of some keys from the `rows` property.
-- `gridActions`: An Array of objects. Each Object of the Array defines a user button that will appear to the right of the each record and must have the properties: `button` and `func`. The first being the HTML code to define the button and the second a function that will be called when the button is clicked. This function receives two parameters: `event` and `rowIndex`.
+- `actions`: An Array of objects. Each Object of the Array defines a user button that will appear to the right of the each record and must have the properties: `button` and `func`. The first being the HTML code to define the button and the second a function that will be called when the button is clicked. This function receives two parameters: `event` and `rowIndex`.
 
 # Events
 
