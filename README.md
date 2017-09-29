@@ -1,6 +1,6 @@
 # A Vue component to render filterable tables with sticky headers
 
-This repo contains a Vue component that can render a filterable table with sticky headers.
+This repository contains a Vue.js component that can render a filterable table with sticky headers.
 
 This component aims to be efficient at handling big tables with loads of rows.
 
