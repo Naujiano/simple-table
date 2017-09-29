@@ -1,0 +1,79 @@
+.simple-table-vue {
+    background: #f4f4f4;
+}
+.simple-table-vue .table {
+    margin: 0;
+}
+.simple-table-vue tfoot, .simple-table-vue tfoot * {
+    max-height: 0;
+    height: 0;
+}
+.simple-table-vue .header {
+    border:0px solid gray;
+    //margin-top:-1px;
+}
+.simple-table-vue .header tr {
+    background:#f4f4f4;
+    //color: white;
+}
+.simple-table-vue [data-component="Tabla"] tr:hover {
+    background: #eee;
+}
+.simple-table-vue tr.rowSelected {
+    background: #ddd;
+}
+.simple-table-vue td {
+    border:1px solid #ddd;
+    box-sizing:border-box;
+    font-size:11px;
+}
+.simple-table-vue .header td {
+    //border:0;
+}
+.simple-table-vue .header td div {
+    background: white;
+    border:1px solid lightgray;
+    padding: 2px;
+    box-sizing: border-box;
+}
+.simple-table-vue td.nowrap {
+    white-space: nowrap;
+}
+.simple-table-vue [data-order="asc"] {
+    background: blue
+}
+.simple-table-vue [data-order="desc"] {
+    background: green
+}
+.simple-table-vue table {
+    border-collapse: collapse;
+    //cursor: default;
+}
+.simple-table-vue td[contenteditable="true"] {
+    cursor: text;
+}
+.simple-table-vue td[contenteditable="true"]:hover {
+    border-color: gray;
+}
+.simple-table-vue td[contenteditable="true"]:focus {
+    background:white;
+    color: #444;
+}
+.simple-table-vue button {
+    padding:0;
+    margin:2px;
+    height:20px;
+    float: left;
+    background:transparent;border:0;cursor:default;
+    opacity: 0.7;
+}
+.simple-table-vue button svg {
+    opacity: inherit;
+}
+.simple-table-vue button:hover{
+    opacity: 0.9;
+}
+.simple-table-vue input[type="checkbox"] {
+    margin:0;
+    padding: 0;
+}
