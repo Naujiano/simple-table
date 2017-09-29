@@ -59,7 +59,7 @@
     -->
     <h3 style="display:block;clear:both;padding-top:20px">Component Render</h3>
     <p>Resize the table to check the behavior.</p>
-    <div style="width:80vw;height:200px;border:5px solid gray;clear:both" ref="simpleTable">
+    <div style="width:600px;height:200px;border:5px solid gray;clear:both" ref="simpleTable">
         <Tabla 
             style="background:white" 
             height="100%" 

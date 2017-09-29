@@ -21497,7 +21497,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Component Render")]), _vm._v(" "), _c('p', [_vm._v("Resize the table to check the behavior.")]), _vm._v(" "), _c('div', {
     ref: "simpleTable",
     staticStyle: {
-      "width": "80vw",
+      "width": "600px",
       "height": "200px",
       "border": "5px solid gray",
       "clear": "both"
