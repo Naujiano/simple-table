@@ -5,7 +5,7 @@
     <div style="width: 80vw;">
         <div class="divParam form-group" style="float:left;padding-top:0px;width:40vw">
             <label>rows (Array of objects)</label>
-            <textarea class="form-control" style="width:100%;height:255px" @blur="changeParameter('rows',$event)">{{rows}}</textarea>
+            <textarea class="form-control" style="width:100%;height:385px" @blur="changeParameter('rows',$event)">{{rows}}</textarea>
         </div>
         <div class="divParam">
             <label>checkable</label>
