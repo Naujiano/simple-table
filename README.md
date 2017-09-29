@@ -10,12 +10,31 @@ npm install simple-table-vue
 
 # Usage
 
+Vue.js code:
+
 ```
 import {SimpleTable} from 'simple-table-vue'
 
 <SimpleTable
     :rows="rows"
 />
+
+export default {
+    data () {
+        return {
+          rows: [
+                {nombre:"javier",apellido:"",dni:""}
+                ,{nombre:"juan",apellido:"migliorini",dni:"12345678z"}
+                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+                ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
+            ]
+        }
+    }
+}
 ```
 
 # Props
