@@ -40,5 +40,5 @@ The component emits the following events:
 
 # Interactive working example
 
-You can see the component in action and test its properties in the following [working example](https://cdn.rawgit.com/Naujiano/simple-table/8f3912a7/working-example/index.html)
+You can see the component in action and test its properties in the following [working example](https://cdn.rawgit.com/Naujiano/simple-table/8f3912a7/working-example/index.html).
 
