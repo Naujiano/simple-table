@@ -8,7 +8,7 @@ For the moment it is dependent on jQuery.
 
 jQuery UI is not used by the component itself, only by the [working example](http://rawgit.com/Naujiano/simple-table/master/working-example/index.html) to make the component container resizable.
 
-The component is currently being used in an database based SPA. Regular updates can be expected. Please report any issue you find at [https://github.com/Naujiano/simple-table/issues](https://github.com/Naujiano/simple-table/issues)
+The component is currently being used in a database based SPA. Regular updates can be expected. Please report any issue you find at [https://github.com/Naujiano/simple-table/issues](https://github.com/Naujiano/simple-table/issues)
 
 # Installation
 
