@@ -23,7 +23,23 @@ Vue.js code:
 ```
 <template>
 
-    <SimpleTable :rows="rows"/>
+    <SimpleTable 
+        :rows = "rows"
+        :nowrap = "false" 
+        :searchable = "true" 
+        :checkable = "true" 
+        :editablekeys = "['Nombre','Descripcion','Tipo']" 
+        :hiddenKeys = "['cli_id']" 
+        v-on:rowEdit = function ( rowIndex, key, value ) {}
+        v-on:rowClick = function ( row ) {}
+        :actions = {
+            button: `<svg style="width:20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path d="M26 0C11.7 0 0 11.7 0 26s11.7 26 26 26 26-11.7 26-26S40.3 26 0zM38.5 28h-25c-1.1 0-2-0.9-2-2s0.9-2 2-2h25c1.1 0 2 0.9 2 2S39.6 28 38.5 28z"/></svg>`
+            , func: function (event,_rowIndex) {
+                event.stopPropagation();
+                console.log ( _rowIndex )
+            }
+        }
+    />
 
 </template>
 
