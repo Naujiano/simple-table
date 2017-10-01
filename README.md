@@ -76,7 +76,7 @@ The component listen to the following events:
 
 # Styling
 
-The component only change the css classes of the elements on actions. You can give custom style to these classes. Use the [`style.css`](https://rawgit.com/Naujiano/simple-table/master/working-example/style.css) file from the [working example](http://rawgit.com/Naujiano/simple-table/master/working-example/index.html) as reference.
+The component only change the css classes of the elements on actions. You can give custom style to these classes. Use the [style.css](https://github.com/Naujiano/simple-table/blob/master/working-example/style.css) file from the [working example](http://rawgit.com/Naujiano/simple-table/master/working-example/index.html) as reference.
 
 # Interactive working example
 
