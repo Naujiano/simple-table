@@ -19102,17 +19102,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         filterTable: function filterTable() {
             var _this2 = this;
 
-            var searchFields = __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.header [contenteditable="true"]');
-
+            var searchFields = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.simple_table_vue).find('.header [contenteditable="true"]');
             this.editedRows.forEach(function (row, i) {
                 var filterPassed = true;
-                __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_object_keys___default()(_this2.rows[0]).forEach(function (key, i) {
+                searchFields.each(function () {
                     if (filterPassed) {
-                        var val = searchFields.eq(i).text(),
+                        var val = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this).text(),
+                            key = this.id,
                             rowVal = row[key],
                             re = new RegExp(val, "gi"),
                             matches = rowVal && rowVal != null && typeof rowVal != "undefined" ? rowVal.toString().match(re) : false;
-
                         filterPassed = val == "" ? true : matches;
                     }
                 });
@@ -21601,7 +21600,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "cursor": "text"
       },
       attrs: {
-        "contenteditable": "true"
+        "contenteditable": "true",
+        "id": key
       },
       on: {
         "keyup": function($event) {
