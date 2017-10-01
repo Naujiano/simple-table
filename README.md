@@ -74,6 +74,10 @@ The component emits the following events:
 The component listen to the following events:
 - `resize`: Fired when the browser window is resized. The component recalculates the headers size and position each time this event is fired. You can fire this event from Javascript if you need to make the component react to a container resize event on your code.
 
+# Styling
+
+The component only change the css classes of the elements on actions. You can give custom style to these classes. Use the [`style.css`](https://rawgit.com/Naujiano/simple-table/master/working-example/style.css) file from the [working example](http://rawgit.com/Naujiano/simple-table/master/working-example/index.html) as reference.
+
 # Interactive working example
 
 You can see the component in action and test its properties with your own data in the following [working example](http://rawgit.com/Naujiano/simple-table/master/working-example/index.html).
