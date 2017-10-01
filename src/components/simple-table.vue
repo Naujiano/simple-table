@@ -4,7 +4,7 @@
         <table class="table table-condensed header">
             <tbody :style="{position:'absolute'} " ref="header">
                 <tr><td style="text-align:center;" v-if="checkable && editedRows.length"><input type="checkbox" @click="editedRows.forEach(row=>{row._checked=$event.target.checked})"></td><td v-for="key in keys" @click="orderBy(key,$event.target)" :data-order="getOrder(key)">{{key}}</td></tr>
-                <tr v-if="searchable"><td v-if="checkable">&nbsp;</td><td v-for="(key,i) in keys" ><div contenteditable="true" style="width:100%;cursor:text" @keyup="filterTable()"/></td></tr>
+                <tr v-if="searchable"><td v-if="checkable">&nbsp;</td><td v-for="(key,i) in keys" ><div contenteditable="true" style="width:100%;cursor:text" @keyup="filterTable()" :id="key"/></td></tr>
             </tbody>
         </table>
         <table data-component="Tabla" ref="tabla" class="table table-condensed" >
@@ -134,18 +134,16 @@ export default {
       },
       */
       filterTable () {
-          const searchFields = $('.header [contenteditable="true"]')
-          //this.filteredRows = this.editedRows
+          const searchFields = $(this.$refs.simple_table_vue).find('.header [contenteditable="true"]')
           this.editedRows.forEach ( (row,i) => {
               let filterPassed = true
-              Object.keys(this.rows[0]).forEach ( (key,i) => {
+              searchFields.each ( function() {
                   if ( filterPassed ) {
-                    const val = searchFields.eq(i).text()
+                    const val = $(this).text()
+                    , key = this.id
                     , rowVal = row[key]
                     , re = new RegExp ( val , "gi" )
                     , matches = ( rowVal && rowVal != null && typeof rowVal != "undefined" ) ? rowVal.toString().match(re) : false
-                    //this.filteredRows = this.filteredRows.filter ( row => row[key].indexOf(val) != -1 )
-                    //filterPassed = val == "" ? true : ( val == "*" ? ( row[key] != "" ) : ( row[key].indexOf(val) != -1 ) )
                     filterPassed = val == "" ? true : matches
 
                   }
@@ -153,10 +151,6 @@ export default {
               this.editedRows[i]._filterPassed = filterPassed
           })
           this.resizeHeaders()
-          //console.log(this.editedRows)
-        //, filteredRows = this.rows.filter ( row => row[key].indexOf(val) != -1 )
-        //this.filteredRows = filteredRows
-
       },
       onRowClick (row,rowIndex) {
         this.selectedRowIndex = row._rowIndex
