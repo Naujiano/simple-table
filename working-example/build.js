@@ -18953,12 +18953,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }.bind(this)
             }],
             checkable: false,
-            deleteable: false,
             nowrap: false,
             searchable: false,
             overflow: "auto",
             hiddenKeys: [],
-            editablekeys: ["nombre"]
+            editablekeys: ["name"]
         };
     },
     methods: {
@@ -21414,23 +21413,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("True")])])]), _vm._v(" "), _c('div', {
     staticClass: "divParam"
-  }, [_c('label', [_vm._v("deleteable")]), _vm._v(" "), _c('select', {
-    staticClass: "form-control",
-    on: {
-      "change": function($event) {
-        _vm.changeParameter('deleteable', $event)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0"
-    }
-  }, [_vm._v("False")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "1"
-    }
-  }, [_vm._v("True")])])]), _vm._v(" "), _c('div', {
-    staticClass: "divParam"
   }, [_c('label', [_vm._v("nowrap")]), _vm._v(" "), _c('select', {
     staticClass: "form-control",
     on: {
@@ -21511,7 +21493,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "rows": _vm.rows,
       "overflow": _vm.overflow,
       "checkable": _vm.checkable,
-      "deleteable": _vm.deleteable,
       "nowrap": _vm.nowrap,
       "searchable": _vm.searchable,
       "actions": [],

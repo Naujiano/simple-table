@@ -22,13 +22,6 @@
             </select>
         </div>
         <div class="divParam">
-            <label>deleteable</label>
-            <select class="form-control" @change="changeParameter('deleteable',$event)">
-                <option value="0">False</option>
-                <option value="1">True</option>
-            </select>
-        </div>
-        <div class="divParam">
             <label>nowrap</label>
             <select class="form-control" @change="changeParameter('nowrap',$event)">
                 <option value="0">False</option>
@@ -70,7 +63,6 @@
             v-on:rowClick="rowClick" 
             v-on:checkClick="checkClick" 
             :checkable="checkable"
-            :deleteable="deleteable"
             :nowrap="nowrap"
             :searchable="searchable"
             :actions="[]"
@@ -111,12 +103,11 @@ export default {
                 }
             ]            
             , checkable: false
-            , deleteable: false
             , nowrap: false
             , searchable: false
             , overflow: "auto"
             , hiddenKeys: []
-            , editablekeys: ["nombre"]
+            , editablekeys: ["name"]
         }
 	}
   , methods: {
