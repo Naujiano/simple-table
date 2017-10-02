@@ -19166,7 +19166,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 $tbody = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.tbody),
                 $columns = $tbody.find('tr:visible').eq(0).find('td'),
                 $headerColumns = $header.find('tr').eq(0).find('td');
-            $header.width($tbody.width());
+            $header.closest('tbody').width($tbody.closest('table').width());
             $columns.each(function (i) {
                 var $col = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this),
                     $headerCol = $headerColumns.eq(i),
@@ -19182,7 +19182,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         scrollHeaders: function scrollHeaders() {
             var div = this.$refs.scrollableDiv,
                 $header = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.header),
-                scrollLeft = div.scrollLeft * -1 + 1,
+                scrollLeft = div.scrollLeft * -1,
                 width = __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.simple-table-vue').width();
             $header.css({ 'margin-left': scrollLeft + 'px' });
         }

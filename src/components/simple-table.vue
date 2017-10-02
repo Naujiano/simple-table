@@ -196,7 +196,7 @@ export default {
         , $tbody = $(this.$refs.tbody)
         , $columns = $tbody.find('tr:visible').eq(0).find('td')
         , $headerColumns = $header.find('tr').eq(0).find('td')
-        $header.width($tbody.width())
+        $header.closest('tbody').width($tbody.closest('table').width())
         $columns.each ( function (i) {
             const $col = $(this)
             , $headerCol = $headerColumns.eq(i)
@@ -214,7 +214,7 @@ export default {
           //this.resizeHeaders()
           const div = this.$refs.scrollableDiv //$('#scrollableDiv')[0]
           , $header = $(this.$refs.header)
-          , scrollLeft = ( ( div.scrollLeft * -1 ) + 1 )
+          , scrollLeft = ( ( div.scrollLeft * -1 ) )
           , width = $('.simple-table-vue').width()
           $header.css({'margin-left':scrollLeft+ 'px'})//.width (width-scrollLeft-20)
           //$(this.$refs.header).css({clip:`rect(0px,${width-scrollLeft-16}px,100px,0px)`})
