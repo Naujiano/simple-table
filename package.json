@@ -1,6 +1,6 @@
 {
   "name": "simple-table-vue",
-  "version": "0.6.6",
+  "version": "0.7.0",
   "description": "Simple table component with sticky headers for Vue.js",
   "main": "src/index.js",
   "scripts": {

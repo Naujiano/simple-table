@@ -19011,14 +19011,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             required: true
         },
         nowrap: Boolean,
+        selectable: {
+            Type: Boolean,
+            default: true
+        },
         searchable: Boolean,
         deleteable: Boolean,
         orderable: Boolean,
         checkable: Boolean,
-        width: String,
-        height: String,
+        showHeaders: {
+            type: Boolean,
+            default: true
+        },
         cellMaxHeight: String,
         overflow: String,
+        checkedRows: {
+            type: Array,
+            default: function _default() {
+                return [];
+            }
+        },
         hiddenKeys: {
             type: Array,
             default: function _default() {
@@ -19076,9 +19088,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         generateEditedRows: function generateEditedRows() {
+            var _this2 = this;
+
             if (!this.rows.length) return [];
             var editedRows = this.rows.map(function (row, i) {
-                return __WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_object_assign___default()({}, row, { _rowIndex: i, _filterPassed: true, _checked: false });
+                return __WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_object_assign___default()({}, row, { _rowIndex: i, _filterPassed: true, _checked: _this2.checkedRows.indexOf(i) != -1 ? true : false });
             });
             return editedRows;
         },
@@ -19099,7 +19113,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$emit('rowEdit', { rowIndex: rowIndex, key: key, value: value });
         },
         filterTable: function filterTable() {
-            var _this2 = this;
+            var _this3 = this;
 
             var searchFields = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.simple_table_vue).find('.header [contenteditable="true"]');
             this.editedRows.forEach(function (row, i) {
@@ -19114,11 +19128,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         filterPassed = val == "" ? true : matches;
                     }
                 });
-                _this2.editedRows[i]._filterPassed = filterPassed;
+                _this3.editedRows[i]._filterPassed = filterPassed;
             });
             this.resizeHeaders();
         },
         onRowClick: function onRowClick(row, rowIndex) {
+            if (!this.selectable) return false;
             this.selectedRowIndex = row._rowIndex;
             this.$emit('rowClick', row);
         },
@@ -21522,8 +21537,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "simple_table_vue",
     staticClass: "simple-table-vue",
     style: ({
-      width: _vm.width,
-      height: _vm.height,
+      width: '100%',
+      height: '100%',
       overflow: 'hidden',
       'box-sizing': 'border-box',
       position: 'relative'
@@ -21548,7 +21563,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     style: ({
       position: 'absolute'
     })
-  }, [_c('tr', [(_vm.checkable && _vm.editedRows.length) ? _c('td', {
+  }, [(_vm.showHeaders) ? _c('tr', [(_vm.checkable && _vm.editedRows.length) ? _c('td', {
     staticStyle: {
       "text-align": "center"
     }
@@ -21574,7 +21589,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v(_vm._s(key))])
-  })], 2), _vm._v(" "), (_vm.searchable) ? _c('tr', [(_vm.checkable) ? _c('td', [_vm._v(" ")]) : _vm._e(), _vm._l((_vm.keys), function(key, i) {
+  })], 2) : _vm._e(), _vm._v(" "), (_vm.searchable) ? _c('tr', [(_vm.checkable) ? _c('td', [_vm._v(" ")]) : _vm._e(), _vm._l((_vm.keys), function(key, i) {
     return _c('td', [_c('div', {
       staticStyle: {
         "width": "100%",
@@ -21611,7 +21626,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [(_vm.checkable) ? _c('td', {
       class: _vm.tdClass,
       staticStyle: {
-        "text-align": "center"
+        "text-align": "center",
+        "width": "1px"
       }
     }, [_c('input', {
       attrs: {

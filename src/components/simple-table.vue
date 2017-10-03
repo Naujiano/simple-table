@@ -1,16 +1,16 @@
 <template>
-<div class="simple-table-vue" ref="simple_table_vue" :style="{width:width,height:height,overflow:'hidden','box-sizing':'border-box',position:'relative'}">
+<div class="simple-table-vue" ref="simple_table_vue" :style="{width:'100%',height:'100%',overflow:'hidden','box-sizing':'border-box',position:'relative'}">
     <div :style="{height:'100%','overflow-x':overflow,'overflow-y':'scroll'}" v-on:scroll="scrollHeaders" id="scrollableDiv" ref="scrollableDiv">
         <table class="table table-condensed header">
             <tbody :style="{position:'absolute'} " ref="header">
-                <tr><td style="text-align:center;" v-if="checkable && editedRows.length"><input type="checkbox" @click="editedRows.forEach(row=>{row._checked=$event.target.checked})"></td><td v-for="key in keys" @click="orderBy(key,$event.target)" :data-order="getOrder(key)">{{key}}</td></tr>
+                <tr v-if="showHeaders"><td style="text-align:center;" v-if="checkable && editedRows.length"><input type="checkbox" @click="editedRows.forEach(row=>{row._checked=$event.target.checked})"></td><td v-for="key in keys" @click="orderBy(key,$event.target)" :data-order="getOrder(key)">{{key}}</td></tr>
                 <tr v-if="searchable"><td v-if="checkable">&nbsp;</td><td v-for="(key,i) in keys" ><div contenteditable="true" style="width:100%;cursor:text" @keyup="filterTable()" :id="key"/></td></tr>
             </tbody>
         </table>
         <table data-component="Tabla" ref="tabla" class="table table-condensed" >
             <tbody ref="tbody">
                 <tr v-for="(row,rowIndex) in editedRows" @click="onRowClick(row,rowIndex)" v-if="row._filterPassed" :class="{rowSelected:selectedRowIndex==row._rowIndex}">
-                    <td v-if="checkable" :class="tdClass" style="text-align:center">
+                    <td v-if="checkable" :class="tdClass" style="text-align:center;width:1px">
                         <input type="checkbox" :checked="row._checked" @click="onCheckClick(row,rowIndex,$event);"/>
                     </td>
                     <template v-for="key in keys">
@@ -42,14 +42,24 @@ export default {
         , required: true
     }
     , nowrap: Boolean
+    , selectable: {
+        Type: Boolean
+        , default: true
+    }
     , searchable: Boolean
     , deleteable: Boolean
     , orderable: Boolean
     , checkable: Boolean
-    , width: String
-    , height: String
+    , showHeaders: {
+        type: Boolean
+        , default: true
+    }
     , cellMaxHeight: String
     , overflow: String
+    , checkedRows: {
+        type: Array
+        , default: function (){return []}
+    }
     , hiddenKeys: {
         type: Array
         , default: function (){return []}
@@ -104,7 +114,7 @@ export default {
       generateEditedRows() {
         if ( ! this.rows.length ) return []
         const editedRows = this.rows.map ( (row,i) => {
-            return Object.assign ( {}, row, { _rowIndex: i, _filterPassed: true, _checked: false } )
+            return Object.assign ( {}, row, { _rowIndex: i, _filterPassed: true, _checked: this.checkedRows.indexOf(i) != -1 ? true : false } )
         } )
         return editedRows
       },
@@ -153,6 +163,7 @@ export default {
           this.resizeHeaders()
       },
       onRowClick (row,rowIndex) {
+          if ( ! this.selectable ) return false
         this.selectedRowIndex = row._rowIndex
           this.$emit('rowClick',row)
       },
@@ -208,7 +219,15 @@ export default {
         $header.css({"margin-top":"-"+headerHeight+"px"})
         $(this.$refs.simple_table_vue).css({"padding-top":headerHeight+"px"})
         this.scrollHeaders()
+        /*
+        console.log(this.checkable)
+        if ( this.checkable ) {
+            console.log('chkkk')
+            $headerColumns.eq(0).css({"max-width":"15px"})
+            $tbody.find('tr:visible').find('td:first-child').css({"max-width":"15px"})
+        }
         //$table.css({background:'red'})
+        */
       },
       scrollHeaders() {
           //this.resizeHeaders()

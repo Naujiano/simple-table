@@ -25,9 +25,6 @@ Vue.js code:
 
     <SimpleTable 
         :rows = "rows"
-        :nowrap = "false" 
-        :searchable = "true" 
-        :checkable = "true" 
         :editablekeys = "['Nombre','Descripcion','Tipo']" 
         :hiddenKeys = "['cli_id']" 
         v-on:rowEdit = function ( rowIndex, key, value ) {}
@@ -55,11 +52,6 @@ Vue.js code:
                     {nombre:"javier",apellido:"",dni:""}
                     ,{nombre:"juan",apellido:"migliorini",dni:"12345678z"}
                     ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
-                    ,{nombre:"javier",apellido:"de la quintana",dni:"12345678z"}
                 ]
             }
         }
@@ -70,14 +62,16 @@ Vue.js code:
 
 # Props
 
-You can pass these props  to the component:
+The following `props` can be passed to the component:
 - `rows`: (required) the data the component will operate on. An Array of Objects.
 - `nowrap`: `False` by default. If set to `True` each `<td>` of the table will have `white-space: nowrap` in its style.
+- `selectable`: `True` by default. If set to `False` the 'select row' functionality will be disabled.
 - `searchable`: `False` by default. If set to `True` a searchable field will appear below each header. The searched value will be treated as a regular expression.
 - `checkable`: `False` by default. If set to `True` a checkbox field will appear to the left of each record.
 - `overflow`: `auto` by default. This value is assigned to the `overflow-x` css parameter of the component. The `overflow-y` css parameter is hardcoded to `scroll` in the component, so the vertical scrollbar is always shown.
 - `cellMaxHeight`: Set the table `<td>` maximum height. Use a number followed by a unit indentifier, for example `12px`.
 - `hiddenKeys`: An Array of Strings. Use this if you want to not render some keys from the `rows` property. You will usually want to hide an ID field that you pass for editing purposes.
+- `checkedRows`: An Array of Numbers. Pass the row indexes you want to check.
 - `editablekeys`: An Array of Strings. Use this if you want to allow the edition of some keys from the `rows` property.
 - `actions`: An Array of objects. Each Object of the Array defines a user button that will appear to the right of the each record and must have the properties: `button` and `func`. The first being the HTML code to define the button and the second a function that will be called when the button is clicked. This function receives two parameters: `event` and `rowIndex`.
 
