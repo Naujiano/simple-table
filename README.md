@@ -18,6 +18,8 @@ npm install simple-table-vue
 
 # Usage
 
+The only required property is `rows`.
+
 Vue.js code:
 
 ```
