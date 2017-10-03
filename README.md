@@ -12,7 +12,7 @@ The component is currently being used in a database based SPA. Regular updates c
 
 # Installation
 
-```
+```js
 npm install simple-table-vue
 ```
 
@@ -22,7 +22,7 @@ The only required property is `rows`.
 
 Vue.js code:
 
-```
+```js
 <template>
 
     <SimpleTable 
