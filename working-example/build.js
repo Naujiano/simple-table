@@ -19179,7 +19179,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var $header = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.header),
                 $tbody = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.tbody),
                 $columns = $tbody.find('tr:visible').eq(0).find('td'),
-                $headerColumns = $header.find('tr').eq(0).find('td');
+                $headerColumns = $header.find('tr').eq(0).find('td'),
+                $scrollableDiv = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.scrollableDiv);
+            $scrollableDiv.height('100%');
             $header.closest('tbody').width($tbody.closest('table').width());
             $columns.each(function (i) {
                 var $col = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this),
@@ -19192,6 +19194,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             $header.css({ "margin-top": "-" + headerHeight + "px" });
             __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.simple_table_vue).css({ "padding-top": headerHeight + "px" });
             this.scrollHeaders();
+            var height = __WEBPACK_IMPORTED_MODULE_3_jquery___default()(this.$refs.simple_table_vue).height();
+            $scrollableDiv.height(height);
         },
         scrollHeaders: function scrollHeaders() {
             var div = this.$refs.scrollableDiv,
@@ -19203,6 +19207,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     updated: function updated() {
         this.resizeHeaders();
+        this.filterTable();
     },
     mounted: function mounted() {
         window.addEventListener('resize', this.resizeHeaders);
@@ -21539,6 +21544,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     style: ({
       width: '100%',
       height: '100%',
+      'max-height': 'inherit',
       overflow: 'hidden',
       'box-sizing': 'border-box',
       position: 'relative'
@@ -21548,7 +21554,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     style: ({
       height: '100%',
       'overflow-x': _vm.overflow,
-      'overflow-y': 'scroll'
+      'overflow-y': 'scroll',
+      'max-height': 'inherit'
     }),
     attrs: {
       "id": "scrollableDiv"
@@ -21690,11 +21697,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('tr', [(_vm.checkable) ? _c('td', {
     staticStyle: {
-      "text-align": "center"
+      "text-align": "center",
+      "padding-top": "0",
+      "padding-bottom": "0"
     }
-  }, [_c('input', {
-    attrs: {
-      "type": "checkbox"
+  }, [_c('div', {
+    staticStyle: {
+      "height": "0",
+      "overflow": "hidden"
     }
   })]) : _vm._e(), _vm._l((_vm.keys), function(key) {
     return _c('td', {
