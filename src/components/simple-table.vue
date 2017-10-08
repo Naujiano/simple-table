@@ -1,6 +1,6 @@
 <template>
-<div class="simple-table-vue" ref="simple_table_vue" :style="{width:'100%',height:'100%',overflow:'hidden','box-sizing':'border-box',position:'relative'}">
-    <div :style="{height:'100%','overflow-x':overflow,'overflow-y':'scroll'}" v-on:scroll="scrollHeaders" id="scrollableDiv" ref="scrollableDiv">
+<div class="simple-table-vue" ref="simple_table_vue" :style="{width:'100%',height:'100%','max-height':'inherit',overflow:'hidden','box-sizing':'border-box',position:'relative'}">
+    <div :style="{height:'100%','overflow-x':overflow,'overflow-y':'scroll','max-height':'inherit'}" v-on:scroll="scrollHeaders" id="scrollableDiv" ref="scrollableDiv">
         <table class="table table-condensed header">
             <tbody :style="{position:'absolute'} " ref="header">
                 <tr v-if="showHeaders"><td style="text-align:center;" v-if="checkable && editedRows.length"><input type="checkbox" @click="editedRows.forEach(row=>{row._checked=$event.target.checked})"></td><td v-for="key in keys" @click="orderBy(key,$event.target)" :data-order="getOrder(key)">{{key}}</td></tr>
@@ -26,7 +26,7 @@
                 </tr>
             </tbody>
             <tfoot style="visibility:hidden">
-                <tr><td style="text-align:center;" v-if="checkable"><input type="checkbox"></td><td v-for="key in keys" style="padding-top:0;padding-bottom:0"><div style="height:0;overflow:hidden">{{key}}</div></td></tr>
+                <tr><td style="text-align:center;padding-top:0;padding-bottom:0" v-if="checkable"><div style="height:0;overflow:hidden"></div></td><td v-for="key in keys" style="padding-top:0;padding-bottom:0"><div style="height:0;overflow:hidden">{{key}}</div></td></tr>
             </tfoot>
         </table>
     </div>
@@ -207,6 +207,8 @@ export default {
         , $tbody = $(this.$refs.tbody)
         , $columns = $tbody.find('tr:visible').eq(0).find('td')
         , $headerColumns = $header.find('tr').eq(0).find('td')
+        , $scrollableDiv = $(this.$refs.scrollableDiv)
+        $scrollableDiv.height('100%')
         $header.closest('tbody').width($tbody.closest('table').width())
         $columns.each ( function (i) {
             const $col = $(this)
@@ -219,15 +221,8 @@ export default {
         $header.css({"margin-top":"-"+headerHeight+"px"})
         $(this.$refs.simple_table_vue).css({"padding-top":headerHeight+"px"})
         this.scrollHeaders()
-        /*
-        console.log(this.checkable)
-        if ( this.checkable ) {
-            console.log('chkkk')
-            $headerColumns.eq(0).css({"max-width":"15px"})
-            $tbody.find('tr:visible').find('td:first-child').css({"max-width":"15px"})
-        }
-        //$table.css({background:'red'})
-        */
+        const height = $(this.$refs.simple_table_vue).height()
+        $scrollableDiv.height(height)
       },
       scrollHeaders() {
           //this.resizeHeaders()
@@ -243,6 +238,7 @@ export default {
   updated(){
     //if ( this.editedRows.length ) this.onRowClick(this.editedRows[0],0)
       this.resizeHeaders()
+      this.filterTable()
   },
     mounted () {
       window.addEventListener('resize', this.resizeHeaders )
