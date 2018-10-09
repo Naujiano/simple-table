@@ -3,7 +3,7 @@
     <div :style="{height:'100%','overflow-x':overflow,'overflow-y':'scroll','max-height':'inherit'}" v-on:scroll="scrollHeaders" id="scrollableDiv" ref="scrollableDiv">
         <table class="table table-condensed header">
             <tbody :style="{position:'absolute'} " ref="header">
-                <tr v-if="showHeaders"><td style="text-align:center;" v-if="checkable && editedRows.length"><input type="checkbox" @click="editedRows.forEach(row=>{row._checked=$event.target.checked})"></td><td v-for="key in keys" @click="orderBy(key,$event.target)" :data-order="getOrder(key)">{{key}}</td></tr>
+                <tr v-if="showHeaders"><td style="text-align:center;" v-if="checkable && editedRows.length"><input type="checkbox" @click="allChecksClick($event)"></td><td v-for="key in keys" @click="orderBy(key,$event.target)" :data-order="getOrder(key)">{{key}}</td></tr>
                 <tr v-if="searchable"><td v-if="checkable">&nbsp;</td><td v-for="(key,i) in keys" ><div contenteditable="true" style="width:100%;cursor:text" @keyup="filterTable()" :id="key"/></td></tr>
             </tbody>
         </table>
@@ -50,6 +50,7 @@ export default {
     , deleteable: Boolean
     , orderable: Boolean
     , checkable: Boolean
+    , singlecheck: Boolean
     , showHeaders: {
         type: Boolean
         , default: true
@@ -169,9 +170,22 @@ export default {
       },
       onCheckClick (row,rowIndex,event) {
           event.stopPropagation()
+          const newRows = JSON.cc ( this.editedRows )
+          if ( this.singlecheck ) {
+            newRows.forEach ( (row,i) => { 
+                row._checked = false; 
+            } )
+          }
           const newRow = JSON.parse(JSON.stringify(row))
           newRow._checked = event.target.checked
-          this.editedRows[rowIndex]=newRow;
+          newRows[rowIndex]=newRow;
+          const checklist = newRows.filter ( row => row._checked ).map ( row => row._rowIndex )
+          this.editedRows=newRows 
+          this.$emit('checkClick',checklist)
+      },
+      allChecksClick (event) {
+          event.stopPropagation()
+          this.editedRows.forEach(row=>{row._checked=event.target.checked});
           const checklist = this.editedRows.filter ( row => row._checked ).map ( row => row._rowIndex )//
           this.$emit('checkClick',checklist)
       },
@@ -208,6 +222,7 @@ export default {
         , $columns = $tbody.find('tr:visible').eq(0).find('td')
         , $headerColumns = $header.find('tr').eq(0).find('td')
         , $scrollableDiv = $(this.$refs.scrollableDiv)
+        , widths = []
         $scrollableDiv.height('100%')
         $header.closest('tbody').width($tbody.closest('table').width())
         $columns.each ( function (i) {
@@ -216,6 +231,7 @@ export default {
             , width = $col.width()
             //console.log(i+'*'+width)
             $headerCol.width ( width )
+            widths.push ( width )
         })
         const headerHeight = $header.height()
         $header.css({"margin-top":"-"+headerHeight+"px"})
@@ -223,6 +239,7 @@ export default {
         this.scrollHeaders()
         const height = $(this.$refs.simple_table_vue).height()
         $scrollableDiv.height(height)
+        this.$emit('resizeHeaders',widths)
       },
       scrollHeaders() {
           //this.resizeHeaders()
@@ -231,6 +248,7 @@ export default {
           , scrollLeft = ( ( div.scrollLeft * -1 ) )
           , width = $('.simple-table-vue').width()
           $header.css({'margin-left':scrollLeft+ 'px'})//.width (width-scrollLeft-20)
+          this.$emit('scrollHeaders',scrollLeft*-1)
           //$(this.$refs.header).css({clip:`rect(0px,${width-scrollLeft-16}px,100px,0px)`})
           //console.log(width
       }
