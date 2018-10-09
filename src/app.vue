@@ -15,6 +15,13 @@
             </select>
         </div>
         <div class="divParam">
+            <label>singlecheck</label>
+            <select class="form-control" @change="changeParameter('singlecheck',$event)">
+                <option value="0">False</option>
+                <option value="1">True</option>
+            </select>
+        </div>
+        <div class="divParam">
             <label>searchable</label>
             <select class="form-control" @change="changeParameter('searchable',$event)">
                 <option value="0">False</option>
@@ -63,6 +70,7 @@
             v-on:rowClick="rowClick" 
             v-on:checkClick="checkClick" 
             :checkable="checkable"
+            :singlecheck="singlecheck"
             :nowrap="nowrap"
             :searchable="searchable"
             :actions="[]"
@@ -103,6 +111,7 @@ export default {
                 }
             ]            
             , checkable: false
+            , singlecheck: false
             , nowrap: false
             , searchable: false
             , overflow: "auto"

@@ -170,7 +170,7 @@ export default {
       },
       onCheckClick (row,rowIndex,event) {
           event.stopPropagation()
-          const newRows = JSON.cc ( this.editedRows )
+          const newRows = JSON.parse ( JSON.stringify ( this.editedRows ) )
           if ( this.singlecheck ) {
             newRows.forEach ( (row,i) => { 
                 row._checked = false; 

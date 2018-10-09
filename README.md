@@ -70,6 +70,7 @@ The following `props` can be passed to the component:
 - `selectable`: `True` by default. If set to `False` the 'select row' functionality will be disabled.
 - `searchable`: `False` by default. If set to `True` a searchable field will appear below each header. The searched value will be treated as a regular expression.
 - `checkable`: `False` by default. If set to `True` a checkbox field will appear to the left of each record.
+- `singlecheck`: `False` by default. If set to `True`, only one line can be checked at a time (radio button behavior).
 - `overflow`: `auto` by default. This value is assigned to the `overflow-x` css parameter of the component. The `overflow-y` css parameter is hardcoded to `scroll` in the component, so the vertical scrollbar is always shown.
 - `cellMaxHeight`: Set the table `<td>` maximum height. Use a number followed by a unit indentifier, for example `12px`.
 - `hiddenKeys`: An Array of Strings. Use this if you want to not render some keys from the `rows` property. You will usually want to hide an ID field that you pass for editing purposes.
