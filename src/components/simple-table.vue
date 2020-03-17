@@ -3,13 +3,13 @@
     <div :style="{height:'100%','overflow-x':overflow,'overflow-y':'scroll','max-height':'inherit'}" v-on:scroll="scrollHeaders" id="scrollableDiv" ref="scrollableDiv">
         <table class="table table-condensed header">
             <tbody :style="{position:'absolute'} " ref="header">
-                <tr v-if="showHeaders"><td style="text-align:center;" v-if="checkable && editedRows.length"><input type="checkbox" @click="allChecksClick($event)"></td><td v-for="key in keys" @click="orderBy(key,$event.target)" :data-order="getOrder(key)">{{key}}</td></tr>
-                <tr v-if="searchable"><td v-if="checkable">&nbsp;</td><td v-for="(key,i) in keys" ><div contenteditable="true" style="width:100%;cursor:text" @keyup="filterTable()" :id="key"/></td></tr>
+                <tr v-if="showHeaders"><td style="text-align:center;" v-if="checkable && editedRows.length"><input type="checkbox" @click="allChecksClick($event)"></td><td v-for="(key,i) in keys" @click="headerClick(key,$event.target,i)" :data-order="getOrder(key)">{{key}}</td></tr>
+                <tr v-if="searchable" v-show="showSearchField"><td v-if="checkable">&nbsp;</td><td v-for="(key,i) in keys" ><div contenteditable="true" style="width:100%;cursor:text" @keyup="filterTable()" :id="key">{{searchString}}</div></td></tr>
             </tbody>
         </table>
         <table data-component="Tabla" ref="tabla" class="table table-condensed" >
             <tbody ref="tbody">
-                <tr v-for="(row,rowIndex) in editedRows" @click="onRowClick(row,rowIndex)" v-if="row._filterPassed" :class="{rowSelected:selectedRowIndex==row._rowIndex}">
+                <tr v-for="(row,rowIndex) in editedRows" @click="onRowClick(row,rowIndex,$event)" v-if="row._filterPassed" :class="{rowSelected:selectedRowIndex==row._rowIndex}">
                     <td v-if="checkable" :class="tdClass" style="text-align:center;width:1px">
                         <input type="checkbox" :checked="row._checked" @click="onCheckClick(row,rowIndex,$event);"/>
                     </td>
@@ -47,6 +47,8 @@ export default {
         , default: true
     }
     , searchable: Boolean
+    , showSearchField: Boolean
+    , searchString: String
     , deleteable: Boolean
     , orderable: Boolean
     , checkable: Boolean
@@ -93,6 +95,11 @@ export default {
         this.editedRows = this.generateEditedRows()
         this.selectedRowIndex = -1
         //this.$emit('rowClick',{})
+    },
+    checkedRows(){
+        this.editedRows = this.generateEditedRows()
+        //this.selectedRowIndex = -1
+        //this.$emit('rowClick',{})
     }
   },
   computed: {
@@ -117,6 +124,7 @@ export default {
         const editedRows = this.rows.map ( (row,i) => {
             return Object.assign ( {}, row, { _rowIndex: i, _filterPassed: true, _checked: this.checkedRows.indexOf(i) != -1 ? true : false } )
         } )
+        //console.log ( editedRows)
         return editedRows
       },
       reIndexRows(rows) {
@@ -146,6 +154,7 @@ export default {
       */
       filterTable () {
           const searchFields = $(this.$refs.simple_table_vue).find('.header [contenteditable="true"]')
+          //console.log(searchFields.length)
           this.editedRows.forEach ( (row,i) => {
               let filterPassed = true
               searchFields.each ( function() {
@@ -155,16 +164,23 @@ export default {
                     , rowVal = row[key]
                     , re = new RegExp ( val , "gi" )
                     , matches = ( rowVal && rowVal != null && typeof rowVal != "undefined" ) ? rowVal.toString().match(re) : false
-                    filterPassed = val == "" ? true : matches
-
+                    filterPassed = ( val == "" || matches ) ? true : false
                   }
               })
               this.editedRows[i]._filterPassed = filterPassed
           })
           this.resizeHeaders()
+          let searchArray = []
+          searchFields.each ( function() {
+              searchArray.push ( $(this).html() )
+          })
+          this.$emit('search', searchArray ) //emito los valores introducidos en las casillas de búsqueda.
       },
-      onRowClick (row,rowIndex) {
-          if ( ! this.selectable ) return false
+      onRowClick (row,rowIndex,event) {
+          if ( ! this.selectable ) {
+              this.onCheckClick (row,rowIndex,event)
+              return false
+          }
         this.selectedRowIndex = row._rowIndex
           this.$emit('rowClick',row)
       },
@@ -177,9 +193,9 @@ export default {
             } )
           }
           const newRow = JSON.parse(JSON.stringify(row))
-          newRow._checked = event.target.checked
+          newRow._checked = event.target.checked ? event.target.checked : ! newRow._checked
           newRows[rowIndex]=newRow;
-          const checklist = newRows.filter ( row => row._checked ).map ( row => row._rowIndex )
+          const checklist = newRows.filter ( row => row._checked )//.map ( row => row._rowIndex )
           this.editedRows=newRows 
           this.$emit('checkClick',checklist)
       },
@@ -188,6 +204,9 @@ export default {
           this.editedRows.forEach(row=>{row._checked=event.target.checked});
           const checklist = this.editedRows.filter ( row => row._checked ).map ( row => row._rowIndex )//
           this.$emit('checkClick',checklist)
+      },
+      headerClick ( key, target, i ) {
+          this.$emit ( 'headerClick', {key, target, index: i})
       },
       orderBy ( key, target ) {
           if ( !this.orderable ) return false
@@ -251,7 +270,16 @@ export default {
           this.$emit('scrollHeaders',scrollLeft*-1)
           //$(this.$refs.header).css({clip:`rect(0px,${width-scrollLeft-16}px,100px,0px)`})
           //console.log(width
-      }
+      },
+    reset () { 
+        
+        this.$nextTick(function(){
+          const newRows = JSON.cc ( this.generateEditedRows() ) 
+          this.editedRows=newRows 
+        })
+        
+    }
+
   },
   updated(){
     //if ( this.editedRows.length ) this.onRowClick(this.editedRows[0],0)
@@ -261,6 +289,7 @@ export default {
     mounted () {
       window.addEventListener('resize', this.resizeHeaders )
       this.resizeHeaders()
+      //this.filterTable()
     },
     beforeDestroy () {
       window.removeEventListener('resize', this.resizeHeaders)
