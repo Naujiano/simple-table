@@ -9,7 +9,7 @@
         </table>
         <table data-component="Tabla" ref="tabla" class="table table-condensed" >
             <tbody ref="tbody">
-                <tr v-for="(row,rowIndex) in editedRows" @click="onRowClick(row,rowIndex,$event)" v-if="row._filterPassed" :class="{rowSelected:selectedRowIndex==row._rowIndex}">
+                <tr v-for="(row,rowIndex) in editedRows" @click="onRowClick(row,rowIndex,$event)" v-if="row._filterPassed" :class="{rowSelected:selectedRowIndex==row._rowIndex, rowChecked:row._checked}">
                     <td v-if="checkable" :class="tdClass" style="text-align:center;width:1px">
                         <input type="checkbox" :checked="row._checked" @click="onCheckClick(row,rowIndex,$event);"/>
                     </td>
@@ -256,14 +256,15 @@ export default {
         $header.css({"margin-top":"-"+headerHeight+"px"})
         $(this.$refs.simple_table_vue).css({"padding-top":headerHeight+"px"})
         this.scrollHeaders()
-        const height = $(this.$refs.simple_table_vue).height()
+        const height = $(this.$refs.simple_table_vue).outerHeight()
         $scrollableDiv.height(height)
         this.$emit('resizeHeaders',widths)
       },
       scrollHeaders() {
           //this.resizeHeaders()
           const div = this.$refs.scrollableDiv //$('#scrollableDiv')[0]
-          , $header = $(this.$refs.header)
+          if ( !div ) return false
+          const $header = $(this.$refs.header)
           , scrollLeft = ( ( div.scrollLeft * -1 ) )
           , width = $('.simple-table-vue').width()
           $header.css({'margin-left':scrollLeft+ 'px'})//.width (width-scrollLeft-20)
@@ -289,6 +290,7 @@ export default {
     mounted () {
       window.addEventListener('resize', this.resizeHeaders )
       this.resizeHeaders()
+      new ResizeObserver(this.resizeHeaders).observe(this.$refs.simple_table_vue)
       //this.filterTable()
     },
     beforeDestroy () {
